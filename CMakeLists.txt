@@ -147,8 +147,9 @@ if (BUILD_CUDA_LIB)
     endif(CUDA_FOUND)
 endif(BUILD_CUDA_LIB)
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(LZ4 REQUIRED liblz4)
+# find_package(PkgConfig REQUIRED)
+# pkg_check_modules(LZ4 REQUIRED liblz4) # use lz4 source instead
+set(LZ4_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/src/cpp/flann/lz4")
 include_directories(${LZ4_INCLUDE_DIRS})
 
 #set the C/C++ include path to the "include" directory
