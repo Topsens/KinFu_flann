@@ -24,7 +24,7 @@ target_link_libraries(flann_cpp ${LZ4_LINK_LIBRARIES})
 # export lz4 headers, so that MSVC to creates flann_cpp.lib
 set_target_properties(flann_cpp PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS YES)
 
-set(flann_install_targets flann_cpp)
+list(APPEND flann_install_targets flann_cpp)
 
 if (BUILD_CUDA_LIB)
     SET(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};-DFLANN_USE_CUDA;-Xcudafe \"--diag_suppress=partial_override\" ;-gencode=arch=compute_52,code=\"sm_52,compute_52\";-gencode=arch=compute_61,code=\"sm_61,compute_61\"")
