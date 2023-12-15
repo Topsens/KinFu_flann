@@ -132,3 +132,10 @@ install (
     DESTINATION include
     FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
 )
+
+install (
+    FILES
+    flann/lz4/lz4.h
+    flann/lz4/lz4hc.h
+    DESTINATION include
+)
